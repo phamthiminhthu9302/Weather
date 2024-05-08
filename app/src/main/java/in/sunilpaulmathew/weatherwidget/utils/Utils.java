@@ -32,15 +32,65 @@ public class Utils {
         return PreferenceManager.getDefaultSharedPreferences(context).getBoolean(name, defaults);
     }
 
+    public static boolean isGPSEnabled(Context context) {
+        LocationManager locationManager = (LocationManager) context.getSystemService(Context.LOCATION_SERVICE);
+        if (locationManager != null) {
+            return locationManager.isProviderEnabled(LocationManager.GPS_PROVIDER);
+        }
+        return false;
+    }
+
     public static boolean isLocationAccessDenied(Context context) {
         return ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
                 ActivityCompat.checkSelfPermission(context, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED;
+    }
+
+    public static boolean isNetworkUnavailable(Context context) {
+        ConnectivityManager cm = (ConnectivityManager) context.getSystemService(Context.CONNECTIVITY_SERVICE);
+        if (cm != null) {
+            return cm.getActiveNetworkInfo() == null || !cm.getActiveNetworkInfo().isConnectedOrConnecting();
+        }
+        return false;
+    }
+
+    @RequiresApi(api = Build.VERSION_CODES.O)
+    public static boolean isNotificationAccessDenied(Context context) {
+        return ActivityCompat.checkSelfPermission(context, Manifest.permission.POST_NOTIFICATIONS) != PackageManager.PERMISSION_GRANTED;
+    }
+
+    public static Drawable getDrawable(int drawable, Context context) {
+        return ContextCompat.getDrawable(context, drawable);
+    }
+
+    public static int getColor(int color, Context context) {
+        return ContextCompat.getColor(context, color);
+    }
+
+
+
+    public static String valueOfInt(String string) {
+        String[] strings = string.split("\\.");
+        if (Integer.parseInt(strings[1]) > 5) {
+            return String.valueOf(Integer.parseInt(strings[0]) + 1);
+        } else {
+            return String.valueOf(Integer.parseInt(strings[0]));
+        }
     }
 
     public static String getString(String name, String defaults, Context context) {
         return PreferenceManager.getDefaultSharedPreferences(context).getString(name, defaults);
     }
 
+    public static String read(File file) throws IOException {
+        StringBuilder stringBuilder = new StringBuilder();
+        try (BufferedReader buf = new BufferedReader(new FileReader(file))) {
+            String line;
+            while ((line = buf.readLine()) != null) {
+                stringBuilder.append(line).append("\n");
+            }
+        }
+        return stringBuilder.toString().trim();
+    }
 
     public static Toast toast(String message, Context context) {
         return Toast.makeText(context, message, Toast.LENGTH_LONG);
@@ -51,6 +101,13 @@ public class Utils {
         mainActivity.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
         activity.startActivity(mainActivity);
         activity.finish();
+    }
+    public static void setLocale(String languageCode, Context context) {
+        Locale locale = new Locale(languageCode);
+        Locale.setDefault(locale);
+        Configuration config = new Configuration();
+        config.locale = locale;
+        context.getResources().updateConfiguration(config, context.getResources().getDisplayMetrics());
     }
 
     public static void saveBoolean(String name, boolean value, Context context) {
