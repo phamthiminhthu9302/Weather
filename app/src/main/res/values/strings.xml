@@ -82,4 +82,6 @@
     <string name="weather_expected_title">Dự báo thời tiết: %s</string>
     <string name="weather_status_failed">Không thể tải dữ liệu thời tiết</string>
     <string name="wind_speed">Tốc độ gió: %s Km/h</string>
+      <!--Google-->
+    <string name="default_web_client_id">880007599203-mu7pu62n4pt8ug8ug9ol2g0rqmac3f2g.apps.googleusercontent.com</string>
 </resources>
