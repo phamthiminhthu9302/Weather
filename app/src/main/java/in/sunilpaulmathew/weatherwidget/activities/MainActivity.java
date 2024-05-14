@@ -4,7 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.app.AppCompatDelegate;
+
 
 import in.sunilpaulmathew.weatherwidget.R;
 import in.sunilpaulmathew.weatherwidget.fragments.WeatherFragment;
@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         }else{
             Utils.setLocale("vi", this);
         }
-        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_FOLLOW_SYSTEM);
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         if (Weather.getLatitude(this) == null || Weather.getLongitude(this) == null) {
