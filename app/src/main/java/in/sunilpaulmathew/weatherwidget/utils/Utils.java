@@ -120,4 +120,7 @@ public class Utils {
     public static void saveString(String name, String value, Context context) {
         PreferenceManager.getDefaultSharedPreferences(context).edit().putString(name, value).apply();
     }
+    public static long getLong(String name, long defaults, Context context) {
+        return PreferenceManager.getDefaultSharedPreferences(context).getLong(name, defaults);
+    }
 }
