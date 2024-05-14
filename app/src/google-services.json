@@ -1,0 +1,64 @@
+{
+  "project_info": {
+    "project_number": "880007599203",
+    "firebase_url": "https://weather-cc417-default-rtdb.firebaseio.com",
+    "project_id": "weather-cc417",
+    "storage_bucket": "weather-cc417.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:880007599203:android:6146ee135f3e1e685ad456",
+        "android_client_info": {
+          "package_name": "in.sunilpaulmathew.weatherwidget"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "880007599203-filpojn9ijvbulbj3d7kmsi5cm99p22q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "in.sunilpaulmathew.weatherwidget",
+            "certificate_hash": "166cf30f6198d268511932eea3d9d80aaf2c2083"
+          }
+        },
+        {
+          "client_id": "880007599203-nd9cb9gjnt2nrdl3qg08rqmaqt0hobtb.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "in.sunilpaulmathew.weatherwidget",
+            "certificate_hash": "da00f5e61086b3fd21236b7b10254e5326c2f4cd"
+          }
+        },
+        {
+          "client_id": "880007599203-te18hb6l75ksvvumacevi0u9dsnclks6.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "in.sunilpaulmathew.weatherwidget",
+            "certificate_hash": "e95873206b952246e430495d9d14d133e9d8c6fc"
+          }
+        },
+        {
+          "client_id": "880007599203-mu7pu62n4pt8ug8ug9ol2g0rqmac3f2g.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBDuuA8IgsDo_jLeiiUU8UtGS0Xrr4CbLE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "880007599203-mu7pu62n4pt8ug8ug9ol2g0rqmac3f2g.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
