@@ -152,7 +152,6 @@ public class AcquireWeatherData {
                 if (mUVIndex.getInt(0) >= 3  && Weather.getFormattedHour(mSunrise.getString(0)) <= hour && Weather.getFormattedHour(
                         mSunrise.getString(0)) + 6 >= hour && Utils.getLong("lastUVAlert", Long.MIN_VALUE, mContext) +
                                   1 * 60 * 60 * 1000 <= System.currentTimeMillis()) {
-
                     new WeatherAlerts(true, mUVIndex.getInt(0), Integer.MIN_VALUE, mContext).alert();
                 }
 
