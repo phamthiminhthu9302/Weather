@@ -18,6 +18,7 @@ import com.google.android.gms.tasks.Task;
 import in.sunilpaulmathew.weatherwidget.controller.LoginController;
 
 import in.sunilpaulmathew.weatherwidget.R;
+import in.sunilpaulmathew.weatherwidget.utils.Utils;
 
 public class LoginActivity extends AppCompatActivity {
 
@@ -33,6 +34,11 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (Utils.getString("language", "VietNamese", this).equals("English")){
+            Utils.setLocale("en", this);
+        }else{
+            Utils.setLocale("vi", this);
+        }
         setContentView(R.layout.fragment_login);
 
         mLoginController = new LoginController(this);
